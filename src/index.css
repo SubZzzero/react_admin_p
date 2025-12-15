@@ -7,34 +7,35 @@ body,
 .content {
     height: 100%;
     width: 100%;
-    font-family: "Source Code Pro", sans-serif;
+    font-family: "Source Code Pro", monospace;
 }
 
 .app {
     display: flex;
     position: relative;
 }
-/* SCROLLBAR/
+
+/* SCROLLBAR */
 
 /* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #e0e0e0;
-}
-
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #e0e0e0;
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-::-webkit-scrollbar-track:hover {
-    background-color: #555;
+::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #e0e0e0;
 }
