@@ -61,7 +61,7 @@ export const themeTokens = (modeTheme) => ({
         800: "#2a2d64",
         900: "#151632",
       },
-    }
+    } //LIGHT THEME
     : {
       grey: {
         100: "#141414",

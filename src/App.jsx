@@ -31,9 +31,6 @@ function App() {
           <main className="content">
             {/* TOP BAR */}
             <Topbar />
-
-
-
             <Routes>
               {/* DASHBOARD */}
               <Route path="/" element={<Dashboard />} />
