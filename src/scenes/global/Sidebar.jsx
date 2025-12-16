@@ -51,9 +51,11 @@ const Sidebar = () => {
 
                 {!isCollapsed && (
                     <Box display="flex" justifyContent="space-between" alignItems="center" p="10px">
-                        <a href="https://github.com/SubZzzero" target="_blank" rel="noopener noreferrer">
-                            <img src={logo} alt="logo_header" width="34px" height="34px" />
-                        </a>
+                        <Box position={"relative"} top={"2px"}>
+                            <a href="https://github.com/SubZzzero" target="_blank" rel="noopener noreferrer">
+                                <img src={logo} alt="logo_header" width="34px" height="34px" />
+                            </a>
+                        </Box>
                         <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                             <MenuOutlinedIcon />
                         </IconButton>
@@ -61,7 +63,7 @@ const Sidebar = () => {
                 )}
 
                 {isCollapsed && (
-                    <Box position={"relative"} left={"19px"}>
+                    <Box position={"relative"} left={"19px"} marginTop={"7px"}>
                         <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                             <MenuOutlinedIcon />
                         </IconButton>
