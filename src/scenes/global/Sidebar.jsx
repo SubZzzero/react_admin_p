@@ -7,6 +7,7 @@ import "react-pro-sidebar/dist/css/styles.css";
 import avatar from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
 import { sidebarConfig } from "../../config/sidebarConfig";
+import { sidebarSx } from "../../config/sidebarSx"
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 
@@ -27,23 +28,7 @@ const Sidebar = () => {
     const [selected, setSelected] = useState("Dashboard")
 
     return (
-        <Box sx={{
-            "& .pro-sidebar-inner": {
-                background: `${colors.primary[400]} !important`,
-            },
-            "& .pro-icon-wrapper": {
-                backgroundColor: "transparent !important",
-            },
-            "& .pro-inner-item": {
-                padding: "5px 35px 5px 20px !important",
-            },
-            "& .pro-inner-item:hover": {
-                color: "#868dfb !important",
-            },
-            "& .pro-menu-item.active": {
-                color: "#6870fa !important",
-            },
-        }}>
+        <Box sx={sidebarSx(colors)}>
             <ProSidebar collapsed={isCollapsed}>
 
                 {!isCollapsed && (
@@ -92,24 +77,38 @@ const Sidebar = () => {
 
                 {/* SIDEBAR NAVIGATION */}
                 <Menu iconShape="square">
-                    <Box>
-                        {sidebarConfig.map(({ title, to, icon: Icon }) => (
-                            <SidebarNavItem
-                                key={title}
-                                title={title}
-                                to={to}
-                                icon={<Icon />}
-                                selected={selected}
-                                setSelected={setSelected}
-                            />
-                        ))}
+                    <Box margin="0 auto">
+                        {sidebarConfig.map((item, index) => {
+                            if (item.section) {
+                                return (
+                                    !isCollapsed && (
+                                        <Typography
+                                            key={index}
+                                            variant="h6"
+                                            color={colors.grey[300]}
+                                            sx={{ margin: "15px 0 5px 20px", cursor: "default" }}
+                                        >
+                                            {item.section}
+                                        </Typography>
+                                    )
+                                );
+                            }
+
+                            const Icon = item.icon;
+                            return (
+                                <SidebarNavItem
+                                    key={item.title}
+                                    title={item.title}
+                                    to={item.to}
+                                    icon={<Icon />}
+                                    selected={selected}
+                                    setSelected={setSelected}
+                                />
+                            );
+                        })}
                     </Box>
                 </Menu>
             </ProSidebar>
-
-
-
-
         </Box >
 
 

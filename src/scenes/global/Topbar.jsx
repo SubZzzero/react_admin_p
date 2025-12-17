@@ -15,7 +15,7 @@ const Topbar = () => {
     const colorMode = useContext(ColorModeContext);
 
     return <>
-        <Box display={"flex"} justifyContent={"space-between"} padding={2}>
+        <Box display={"flex"} justifyContent={"space-between"} padding={"20px"}>
             {/* INPUT */}
             <Box
                 display={"flex"}

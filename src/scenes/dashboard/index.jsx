@@ -3,8 +3,8 @@ import Header from "../../components/Header";
 
 const Dashboard = () => {
     return <>
-        <Box margin={"20px"}>
-            <Header title="DASHBOARD" subtitle="Hello world!"></Header>
+        <Box>
+            <Header title="Dashboard" subtitle="Hello world!"></Header>
         </Box>
     </>
 }
