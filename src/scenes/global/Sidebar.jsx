@@ -6,22 +6,19 @@ import { themeTokens } from "../../theme";
 import "react-pro-sidebar/dist/css/styles.css";
 import avatar from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
-
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import { sidebarConfig } from "../../config/sidebarConfig";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 
+const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
+    const theme = useTheme();
+    const colors = themeTokens(theme.palette.mode)
 
+    return <MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
+        <Typography>{title}</Typography>
+        <Link to={to}></Link>
+    </MenuItem >
+}
 
 const Sidebar = () => {
     const theme = useTheme();
@@ -51,7 +48,7 @@ const Sidebar = () => {
 
                 {!isCollapsed && (
                     <Box display="flex" justifyContent="space-between" alignItems="center" p="10px">
-                        <Box position={"relative"} top={"2px"}>
+                        <Box position={"relative"} top={"2px"} left={"10px"}>
                             <a href="https://github.com/SubZzzero" target="_blank" rel="noopener noreferrer">
                                 <img src={logo} alt="logo_header" width="34px" height="34px" />
                             </a>
@@ -93,12 +90,19 @@ const Sidebar = () => {
                     </Box>
                 )}
 
-
+                {/* SIDEBAR NAVIGATION */}
                 <Menu iconShape="square">
-                    <Box margin="0 auto">
-                        <MenuItem icon={<HomeOutlinedIcon />}>Dashboard</MenuItem>
-                        <MenuItem icon={<PeopleOutlinedIcon />}>Manage Team</MenuItem>
-                        <MenuItem icon={<ContactsOutlinedIcon />}>Contacts</MenuItem>
+                    <Box>
+                        {sidebarConfig.map(({ title, to, icon: Icon }) => (
+                            <SidebarNavItem
+                                key={title}
+                                title={title}
+                                to={to}
+                                icon={<Icon />}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
+                        ))}
                     </Box>
                 </Menu>
             </ProSidebar>
