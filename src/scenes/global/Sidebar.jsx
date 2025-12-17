@@ -9,23 +9,28 @@ import logo from "../../assets/logo.png";
 import { sidebarConfig } from "../../config/sidebarConfig";
 import { sidebarSx } from "../../config/sidebarSx"
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { useLocation } from "react-router-dom";
+
+
 
 
 const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode)
 
+
     return <MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
         <Typography>{title}</Typography>
         <Link to={to}></Link>
     </MenuItem >
+
 }
 
 const Sidebar = () => {
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode)
     const [isCollapsed, setIsCollapsed] = useState(false)
-    const [selected, setSelected] = useState("Dashboard")
+    const [selected, setSelected] = useState("")
 
     return (
         <Box sx={sidebarSx(colors)}>

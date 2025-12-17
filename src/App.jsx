@@ -1,11 +1,12 @@
 import { ColorModeContext, useThemeMod } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Route, Routes } from "react-router-dom"
+import { replace, Route, Routes, useNavigate } from "react-router-dom"
 import Topbar from './scenes/global/Topbar'
 import Sidebar from './scenes/global/Sidebar'
 import Dashboard from "./scenes/dashboard";
 
 import Team from "./scenes/team";
+import { useEffect } from "react";
 // import Invoices from "./scenes/invoices";
 // import Bar from "./scenes/bar";
 // import Form from "./scenes/form";
@@ -17,8 +18,13 @@ import Team from "./scenes/team";
 
 
 function App() {
-
   const [theme, colorMode] = useThemeMod()
+  const navigate = useNavigate()
+
+  console.log("render")
+  // useEffect(() => {
+  //   navigate("/", replace(true))
+  // }, [])
 
   return (
     <ColorModeContext.Provider value={colorMode}>
