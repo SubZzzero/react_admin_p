@@ -78,7 +78,7 @@ const Team = ({ isCollapsed }) => {
     return (
         <Box >
             <Header title={"Team"} subtitle={"Manage Team"} />
-            <Box margin={"20px"} height={"50vh"} sx={{
+            <Box margin={"20px"} height={"auto"} sx={{
                 "& .MuiDataGrid-root": {
                     border: "none",
                 },

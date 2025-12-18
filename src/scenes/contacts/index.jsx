@@ -1,8 +1,9 @@
 import { Box, useTheme } from "@mui/material";
-import { DataGrid, Toolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { themeTokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockDataTeam.js";
 import Header from "../../components/Header.jsx";
+
 
 const Contacts = () => {
     const theme = useTheme();
@@ -14,14 +15,15 @@ const Contacts = () => {
         return {
             field: key,
             headerName: key.charAt(0).toUpperCase() + key.slice(1),
-            flex: 1
+            flex: 0.5
         }
     })
 
     return (
+
         <Box >
             <Header title={"Contacts"} subtitle={"Manage Contacts"} />
-            <Box margin={"20px"} height={"75vh"} sx={{
+            <Box margin={"20px"} height={"auto"} sx={{
                 "& .MuiDataGrid-root": {
                     border: "none",
                 },
@@ -39,15 +41,22 @@ const Contacts = () => {
                 "& .MuiCheckbox-root": {
                     color: `${colors.greenAccent[200]} !important`,
                 },
+                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+                    color: `${colors.grey[100]} !important`,
+                },
+
             }}
             >
+
                 <DataGrid sx={{ cursor: "default" }}
                     rows={mockDataContacts}
                     columns={columns}
-                    checkboxSelection
+                    showToolbar
                 />
+
             </Box>
         </Box >
+
     );
 };
 
