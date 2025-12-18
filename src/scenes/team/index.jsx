@@ -1,14 +1,24 @@
 import { Box, useTheme, Typography } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, useGridApiRef } from "@mui/x-data-grid";
 import { themeTokens } from "../../theme";
 import { mockDataTeam } from "../../data/mockDataTeam.js";
 import Header from "../../components/Header.jsx";
 
+
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LockPersonOutlinedIcon from '@mui/icons-material/LockPersonOutlined';
+import { useEffect } from "react";
 
-const Team = () => {
+
+
+const Team = ({ isCollapsed }) => {
+    const apiRef = useGridApiRef();
+    console.log(apiRef)
+    // useEffect(() => {
+    //     apiRef.current.resize();
+    // }, [isCollapsed]);
+
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode);
 
@@ -19,6 +29,7 @@ const Team = () => {
                 field: key,
                 headerName: "Access Level",
                 flex: 1,
+
                 renderCell: ({ row: { access } }) => (
                     <Box
                         sx={{
@@ -65,15 +76,36 @@ const Team = () => {
     });
 
     return (
-        <Box>
+        <Box >
             <Header title={"Team"} subtitle={"Manage Team"} />
-            <Box marginLeft={"20px"}>
-                <DataGrid
+            <Box margin={"20px"} height={"50vh"} sx={{
+                "& .MuiDataGrid-root": {
+                    border: "none",
+                },
+                "& .name-column--cell": {
+                    color: colors.greenAccent[300],
+                },
+                "& .MuiDataGrid-virtualScroller": {
+                    backgroundColor: colors.primary[400],
+                },
+                "& .MuiDataGrid-footerContainer": {
+                    borderTop: "none",
+                    backgroundColor: colors.blueAccent[700],
+                },
+                "& .MuiCheckbox-root": {
+                    color: `${colors.greenAccent[200]} !important`,
+                },
+            }}
+            >
+                <DataGrid sx={{ cursor: "default" }}
+
                     rows={mockDataTeam}
                     columns={columns}
+                    checkboxSelection
+
                 />
             </Box>
-        </Box>
+        </Box >
     );
 };
 

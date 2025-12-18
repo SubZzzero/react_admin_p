@@ -6,7 +6,8 @@ import Sidebar from './scenes/global/Sidebar'
 import Dashboard from "./scenes/dashboard";
 
 import Team from "./scenes/team";
-import { useEffect } from "react";
+import Contacts from "./scenes/contacts"
+import { createContext, useEffect, useState } from "react";
 // import Invoices from "./scenes/invoices";
 // import Bar from "./scenes/bar";
 // import Form from "./scenes/form";
@@ -19,9 +20,7 @@ import { useEffect } from "react";
 
 function App() {
   const [theme, colorMode] = useThemeMod()
-  const navigate = useNavigate()
-
-  console.log("render")
+  const [isCollapsed, setIsCollapsed] = useState(false);
   // useEffect(() => {
   //   navigate("/", replace(true))
   // }, [])
@@ -33,14 +32,15 @@ function App() {
         <CssBaseline />
         <div className="app">
           {/* SIDEBAR */}
-          <Sidebar />
+          <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
           <main className="content">
             {/* TOP BAR */}
             <Topbar />
             <Routes>
               {/* DASHBOARD */}
               <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
+              <Route path="/team" element={<Team isCollapsed={isCollapsed} />} />
+              <Route path="/contacts" element={<Contacts />} />
               {/* <Route path="/invoices" element={<Invoices />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/form" element={<Form />} />
