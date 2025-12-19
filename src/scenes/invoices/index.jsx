@@ -15,7 +15,7 @@ const Invoices = () => {
         return {
             field: key,
             headerName: key.charAt(0).toUpperCase() + key.slice(1),
-            flex: 0.5
+            flex: 1
         }
     })
 

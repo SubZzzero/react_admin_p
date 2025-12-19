@@ -23,7 +23,14 @@ const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
 
     return <MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
         <Typography>{title}</Typography>
-        <Link to={to}></Link>
+        <Link
+            component={Link}
+            to={to}
+
+            onClick={() => setSelected(title)}
+            icon={icon}>
+
+        </Link>
     </MenuItem >
 
 }
@@ -31,7 +38,7 @@ const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode)
-    // const [isCollapsed, setIsCollapsed] = useState(false)
+
     const [selected, setSelected] = useState("Dashboard")
 
 
