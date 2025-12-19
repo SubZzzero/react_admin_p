@@ -53,6 +53,7 @@ const Invoices = () => {
                     rows={mockDataInvoices}
                     columns={columns}
                     showToolbar
+                    checkboxSelection
                 />
 
             </Box>
