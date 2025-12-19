@@ -1,41 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+
 html,
 body,
 #root,
 .app,
 .content {
-    height: 100%;
-    width: 100%;
-    font-family: "Source Code Pro", monospace;
+  height: 100%;
+  width: 100%;
 }
 
 .app {
-    display: flex;
-    position: relative;
+  display: flex;
 }
 
-/* SCROLLBAR */
-
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #e0e0e0;
-}
-
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #e0e0e0;
+.content {
+  flex: 1;
+  min-width: 0;
 }

@@ -1,15 +1,15 @@
 import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { themeTokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockDataTeam.js";
+import { mockDataInvoices } from "../../data/mockDataTeam.js";
 import Header from "../../components/Header.jsx";
 
 
-const Contacts = () => {
+const Invoices = () => {
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode);
 
-    const keys = Object.keys(mockDataContacts[0]);
+    const keys = Object.keys(mockDataInvoices[0]);
 
     const columns = keys.map((key) => {
         return {
@@ -22,7 +22,7 @@ const Contacts = () => {
     return (
 
         <Box >
-            <Header title={"Contacts"} subtitle={"Manage Contacts"} />
+            <Header title={"Invoices"} subtitle={"Manage Invoices"} />
             <Box margin={"20px"} height={"auto"} sx={{
                 "& .MuiDataGrid-root": {
                     border: "none",
@@ -43,16 +43,14 @@ const Contacts = () => {
                 },
                 "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
                     color: `${colors.grey[100]} !important`,
-                }, "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.grey[100],
-                }
+                },
 
             }}
             >
 
                 <DataGrid sx={{ cursor: "default" }}
 
-                    rows={mockDataContacts}
+                    rows={mockDataInvoices}
                     columns={columns}
                     showToolbar
                 />
@@ -63,4 +61,4 @@ const Contacts = () => {
     );
 };
 
-export default Contacts;
+export default Invoices;

@@ -1,29 +1,23 @@
 import { Box, useTheme, Typography } from "@mui/material";
-import { DataGrid, useGridApiRef } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { themeTokens } from "../../theme";
 import { mockDataTeam } from "../../data/mockDataTeam.js";
 import Header from "../../components/Header.jsx";
 
-
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LockPersonOutlinedIcon from '@mui/icons-material/LockPersonOutlined';
-import { useEffect } from "react";
 
 
+const Team = () => {
 
-const Team = ({ isCollapsed }) => {
-    const apiRef = useGridApiRef();
-    console.log(apiRef)
-    // useEffect(() => {
-    //     apiRef.current.resize();
-    // }, [isCollapsed]);
 
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode);
 
     const keys = Object.keys(mockDataTeam[0]);
     const columns = keys.map((key) => {
+
         if (key === "access") {
             return {
                 field: key,
@@ -31,37 +25,39 @@ const Team = ({ isCollapsed }) => {
                 flex: 1,
 
                 renderCell: ({ row: { access } }) => (
-                    <Box
-                        sx={{
-                            width: "100%",
-                            height: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                        }}
-                    >
+                    <Box>
                         <Box
                             sx={{
-                                width: "60%",
-                                padding: "8px 35px",
+                                width: "100%",
+                                height: "100%",
                                 display: "flex",
                                 alignItems: "center",
-
-                                borderRadius: 1,
-                                backgroundColor:
-                                    access === "admin"
-                                        ? colors.greenAccent[600]
-                                        : access === "manager"
-                                            ? colors.greenAccent[700]
-                                            : colors.greenAccent[700],
+                                justifyContent: "center",
                             }}
                         >
-                            {access === "admin" && <SupervisorAccountOutlinedIcon />}
-                            {access === "manager" && <SecurityOutlinedIcon />}
-                            {access === "user" && <LockPersonOutlinedIcon />}
-                            <Typography color={colors.grey[100]} sx={{ ml: 1, textTransform: "capitalize" }}>
-                                {access}
-                            </Typography>
+                            <Box
+                                sx={{
+                                    width: "60%",
+                                    padding: "8px 65px",
+                                    display: "flex",
+                                    alignItems: "center",
+
+                                    borderRadius: 1,
+                                    backgroundColor:
+                                        access === "admin"
+                                            ? colors.greenAccent[600]
+                                            : access === "manager"
+                                                ? colors.greenAccent[700]
+                                                : colors.greenAccent[700],
+                                }}
+                            >
+                                {access === "admin" && <SupervisorAccountOutlinedIcon />}
+                                {access === "manager" && <SecurityOutlinedIcon />}
+                                {access === "user" && <LockPersonOutlinedIcon />}
+                                <Typography color={colors.grey[100]} sx={{ ml: 1, textTransform: "capitalize" }}>
+                                    {access}
+                                </Typography>
+                            </Box>
                         </Box>
                     </Box>
                 ),
@@ -70,7 +66,7 @@ const Team = ({ isCollapsed }) => {
             return {
                 field: key,
                 headerName: key.charAt(0).toUpperCase() + key.slice(1),
-                flex: 1,
+                flex: 1
             };
         }
     });
@@ -82,8 +78,9 @@ const Team = ({ isCollapsed }) => {
                 "& .MuiDataGrid-root": {
                     border: "none",
                 },
-                "& .name-column--cell": {
-                    color: colors.greenAccent[300],
+                "& .MuiDataGrid-columnHeaders": {
+                    backgroundColor: `${colors.blueAccent[700]}!important`,
+                    borderBottom: "none",
                 },
                 "& .MuiDataGrid-virtualScroller": {
                     backgroundColor: colors.primary[400],
@@ -95,6 +92,10 @@ const Team = ({ isCollapsed }) => {
                 "& .MuiCheckbox-root": {
                     color: `${colors.greenAccent[200]} !important`,
                 },
+                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+                    color: `${colors.grey[100]} !important`,
+                }
+
             }}
             >
                 <DataGrid sx={{ cursor: "default" }}
@@ -102,7 +103,6 @@ const Team = ({ isCollapsed }) => {
                     rows={mockDataTeam}
                     columns={columns}
                     checkboxSelection
-
                 />
             </Box>
         </Box >
@@ -110,3 +110,4 @@ const Team = ({ isCollapsed }) => {
 };
 
 export default Team;
+
