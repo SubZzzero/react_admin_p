@@ -46,10 +46,10 @@ const Team = () => {
                                     borderRadius: 1,
                                     backgroundColor:
                                         access === "admin"
-                                            ? colors.greenAccent[600]
+                                            ? colors.greenAccent[400]
                                             : access === "manager"
-                                                ? colors.greenAccent[700]
-                                                : colors.greenAccent[700],
+                                                ? colors.greenAccent[600]
+                                                : colors.greenAccent[600],
                                 }}
                             >
                                 {access === "admin" && <SupervisorAccountOutlinedIcon />}
