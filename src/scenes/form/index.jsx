@@ -26,7 +26,7 @@ const useSchema = yup.object().shape({
         .matches(phoneRegExp, "phone is not valid")
         .required("Required"),
     address1: yup.string().required("Required"),
-    address2: yup.string().required("Required"),
+    address2: yup.string().notRequired(),
 });
 
 const Form = () => {
@@ -88,7 +88,7 @@ const Form = () => {
                                 onBlur={handleBlur}
                                 onChange={handleChange}
                                 value={values.email}
-                                name="Email"
+                                name="email"
                                 error={!!touched.email && !!errors.email}
                                 helperText={touched.email && errors.email}
                                 sx={{ gridColumn: "span 4" }}
@@ -102,7 +102,7 @@ const Form = () => {
                                 onBlur={handleBlur}
                                 onChange={handleChange}
                                 value={values.contact}
-                                name="Contact number"
+                                name="contact"
                                 error={!!touched.contact && !!errors.contact}
                                 helperText={touched.contact && errors.contact}
                                 sx={{ gridColumn: "span 4" }}
@@ -114,8 +114,8 @@ const Form = () => {
                                 label="Addres1"
                                 onBlur={handleBlur}
                                 onChange={handleChange}
-                                value={values.contact}
-                                name="Addres1"
+                                value={values.address1}
+                                name="address1"
                                 error={!!touched.address1 && !!errors.address1}
                                 helperText={touched.address1 && errors.address1}
                                 sx={{ gridColumn: "span 4" }}
@@ -127,21 +127,18 @@ const Form = () => {
                                 label="Addres2"
                                 onBlur={handleBlur}
                                 onChange={handleChange}
-                                value={values.contact}
-                                name="Addres2"
+                                value={values.address2}
+                                name="address2"
                                 error={!!touched.address2 && !!errors.address2}
                                 helperText={touched.address2 && errors.address2}
                                 sx={{ gridColumn: "span 4" }}
                             />
                         </Box>
                         <Box display={"flex"} alignItems={"center"} justifyContent={"right"} margin={"20px"}>
-                            <Button type="submitt" color="secondary" variant="contained">Create new user</Button>
+                            <Button type="submit" color="secondary" variant="contained">Create new user</Button>
                         </Box>
-
                     </form>
-
                 )}
-
             </Formik>
 
         </Box>
