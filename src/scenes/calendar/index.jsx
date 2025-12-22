@@ -81,7 +81,6 @@ const Calendar = () => {
                                                 year: "numeric",
                                                 month: "short",
                                                 day: "numeric",
-                                                hour: "numeric"
                                             })}
                                         </Typography>
                                     }
