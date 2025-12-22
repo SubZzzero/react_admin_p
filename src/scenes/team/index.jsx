@@ -37,10 +37,11 @@ const Team = () => {
                         >
                             <Box
                                 sx={{
-                                    width: "60%",
-                                    padding: "8px 65px",
+                                    width: "80%",
+                                    padding: "8px 5px",
                                     display: "flex",
                                     alignItems: "center",
+                                    justifyContent: "center",
 
                                     borderRadius: 1,
                                     backgroundColor:

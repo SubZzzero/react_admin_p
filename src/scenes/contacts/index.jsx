@@ -43,9 +43,7 @@ const Contacts = () => {
                 },
                 "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
                     color: `${colors.grey[100]} !important`,
-                }, "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.grey[100],
-                }
+                },
 
             }}
             >
