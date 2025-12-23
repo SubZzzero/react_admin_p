@@ -35,6 +35,7 @@ const Team = () => {
                                 justifyContent: "center",
                             }}
                         >
+
                             <Box
                                 sx={{
                                     width: "80%",
@@ -42,7 +43,7 @@ const Team = () => {
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-
+                                    margin: "6px",
                                     borderRadius: 1,
                                     backgroundColor:
                                         access === "admin"
@@ -59,6 +60,7 @@ const Team = () => {
                                     {access}
                                 </Typography>
                             </Box>
+
                         </Box>
                     </Box>
                 ),

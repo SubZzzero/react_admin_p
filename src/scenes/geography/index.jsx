@@ -9,7 +9,7 @@ const Geography = () => {
             <Header title={"Geography"} subtitle={"Hello from GeoChart"}></Header>
 
 
-            <Box height={"75vh"} margin={"20px"}>
+            <Box height={"75vh"} margin={"20px"} border={"1px solid grey"}>
                 <GeoChart></GeoChart>
             </Box>
         </Box>

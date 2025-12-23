@@ -8,7 +8,7 @@ const Pie = () => {
         <Box>
             <Header title={"Pie"} subtitle={"Hello from PieChart"}></Header>
 
-            <Box height={"75vh"} margin={"20px"}>
+            <Box height={"75vh"} margin={"20px"} border={"1px solid grey"}>
                 <PieChart></PieChart>
             </Box>
         </Box>

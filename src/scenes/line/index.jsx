@@ -9,7 +9,7 @@ const Line = () => {
         <Box>
             <Header title={"LineChart"} subtitle={"Hello from LineChart"} />
 
-            <Box height={"75vh"} margin={"20px"}>
+            <Box height={"75vh"} margin={"20px"} border={"1px solid grey"}>
                 <LineChart></LineChart>
             </Box>
         </Box>

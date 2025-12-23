@@ -21,7 +21,7 @@ const LineChart = () => {
             }}
 
             axisBottom={{
-                legend: 'transportation',
+                // legend: 'transportation',
                 legendOffset: 36,
             }}
 

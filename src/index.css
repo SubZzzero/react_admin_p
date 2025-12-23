@@ -8,10 +8,12 @@ body,
 .content {
   height: 100%;
   width: 100%;
+
 }
 
 .app {
   display: flex;
+
 }
 
 .content {

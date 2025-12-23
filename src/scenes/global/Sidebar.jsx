@@ -12,10 +12,6 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 
 
-
-
-
-
 const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
     const colors = themeTokens(theme.palette.mode)

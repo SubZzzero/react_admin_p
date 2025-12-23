@@ -6,7 +6,7 @@ const Bar = () => {
         <Box>
             <Header title={"Bar"} subtitle={"Hello from BarChart"}></Header>
 
-            <Box height={"75vh"} margin={"20px"}>
+            <Box height={"75vh"} margin={"20px"} border={"1px solid grey"}>
 
                 <BarChart></BarChart>
             </Box>

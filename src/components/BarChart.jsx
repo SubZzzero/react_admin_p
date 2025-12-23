@@ -64,7 +64,7 @@ const BarChart = () => {
                     itemHeight: 16
                 }
             ]}
-            axisBottom={{ legend: 'country', legendOffset: 32 }}
+            axisBottom={{ legend: '', legendOffset: 32 }}
             axisLeft={{ legend: 'food', legendOffset: -40 }}
             margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         />
