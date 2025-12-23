@@ -26,7 +26,6 @@ const SidebarNavItem = ({ title, to, icon, selected, setSelected }) => {
         <Link
             component={Link}
             to={to}
-
             onClick={() => setSelected(title)}
             icon={icon}>
 
@@ -69,8 +68,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                         </IconButton>
                     </Box>
                 )}
-
-
 
                 {/* USER */}
                 {!isCollapsed && (
