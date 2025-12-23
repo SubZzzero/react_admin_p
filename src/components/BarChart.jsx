@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+
 import { ResponsiveBar } from '@nivo/bar'
 import { mockBarData as data } from "../data/mockDataTeam";
 import { themeTokens } from "../theme";
