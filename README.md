@@ -2,6 +2,7 @@
 
 Educational frontend project built with **React**  and **Material UI**.
 
+![Image alt](https://github.com/SubZzzero/react_admin_p/blob/main/main.png)
 ---
 
 ## Description
