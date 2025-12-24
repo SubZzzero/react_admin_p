@@ -39,7 +39,7 @@ Make sure you have installed:
 ```bash
 git clone https://github.com/SubZzzero/admin-dashboard-react.git
 
-cd admin-dashboard-react
+cd react_admin_p-main
 
 npm install
 
