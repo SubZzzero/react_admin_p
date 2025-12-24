@@ -38,7 +38,7 @@ Make sure you have installed:
 - **npm** version 9 or higher
 
 ```bash
-git clone https://github.com/SubZzzero/admin-dashboard-react.git
+git clone https://github.com/SubZzzero/react_admin_p.git
 
 cd react_admin_p-main
 
