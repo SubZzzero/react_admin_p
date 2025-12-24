@@ -1,16 +1,49 @@
-# React + Vite
+# Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Educational frontend project built with **React**  and **Material UI**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## React Compiler
+This is an educational single-page application created to practice building a modern admin dashboard using React and Material UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application demonstrates layout composition with sidebar navigation, dashboard widgets, charts, tables, forms and calendar components.
 
-## Expanding the ESLint configuration
+The project was developed for learning purposes and as part of a personal portfolio.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Tech Stack
+
+- **React**
+- **Material UI**
+- **React Router DOM**
+- **Formik**
+- **Yup**
+- **Nivo**
+- **FullCalendar**
+- **react-pro-sidebar**
+- **JavaScript (ES6+)**
+- **CSS**
+- **HTML**
+- **Vite**
+---
+
+## Installation and Run
+
+Make sure you have installed:
+
+- **Node.js** version 18 or higher
+- **npm** version 9 or higher
+
+```bash
+git clone https://github.com/SubZzzero/admin-dashboard-react.git
+
+cd admin-dashboard-react
+
+npm install
+
+npm run dev
+
+The application will be available at:
+http://localhost:5173
